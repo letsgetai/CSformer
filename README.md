@@ -75,7 +75,7 @@ pip install -r requirements-cu124.txt
 
 For CPU use, install `pip install -r requirements.txt`. Exact GPU and tested macOS CPU package
 versions are recorded in `requirements-cu124.lock.txt` and `requirements-cpu-macos.lock.txt`;
-see [environment details](docs/reproduction.md#environment).
+see [environment details](docs/reproduction.md#setup).
 
 ### Dataset Preparation
 
@@ -93,7 +93,7 @@ dataset/
 
 Data sources and SHA-256 checksums are in
 [metadata/dataset-sources.json](metadata/dataset-sources.json). The scaler is fitted on the
-training split only; split definitions are in [the reproduction notes](docs/reproduction.md#data).
+training split only; split definitions are in [the reproduction notes](docs/reproduction.md#data-and-configurations).
 
 ### Training and Evaluation
 
