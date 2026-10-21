@@ -1,0 +1,949 @@
+{
+  "paper_title": "Cross-Scale Attention for Long-term Time Series Forecasting",
+  "doi": "10.1109/LSP.2024.3439103",
+  "paper_copy": "author accepted manuscript, Table I, p.3",
+  "paper_sections": {
+    "architecture": "Section II, Figure 1",
+    "settings": "Section III-A, p.3",
+    "results": "Table I, p.3"
+  },
+  "notes": [
+    "The paper fields contain explicitly reported architectural settings; archive_only contains training hyperparameters supplied by the original experiment scripts.",
+    "top_k corresponds to the paper scale count; active patch lengths are L, L/2, L/4, ... .",
+    "Traffic has 862 channels. Current scripts use enc_in=862; see the result record for the original command and its effect.",
+    "The single-seed result table uses legacy validation; full validation evaluates every validation window for new experiments."
+  ],
+  "configurations": [
+    {
+      "dataset": "Weather",
+      "pred_len": 96,
+      "paper": {
+        "seq_len": 336,
+        "scale": 4,
+        "patch_lengths": [
+          336,
+          168,
+          84,
+          42
+        ],
+        "tokens": 15,
+        "e_layers": 1,
+        "n_heads": 1,
+        "n_f_layers": 1
+      },
+      "archive_only": {
+        "enc_in": 21,
+        "d_model": 32,
+        "d_ff": 96,
+        "dropout": 0.4,
+        "head_dropout": 0,
+        "fc_dropout": 0,
+        "batch_size": 128,
+        "learning_rate": 0.005,
+        "patience": 20,
+        "train_epochs": 100,
+        "features": "M",
+        "random_seed": 2024
+      },
+      "current_script": "scripts/CSformer/weather.sh",
+      "numerical_reproduction": "single_seed_completed"
+    },
+    {
+      "dataset": "Weather",
+      "pred_len": 192,
+      "paper": {
+        "seq_len": 336,
+        "scale": 4,
+        "patch_lengths": [
+          336,
+          168,
+          84,
+          42
+        ],
+        "tokens": 15,
+        "e_layers": 1,
+        "n_heads": 1,
+        "n_f_layers": 1
+      },
+      "archive_only": {
+        "enc_in": 21,
+        "d_model": 32,
+        "d_ff": 96,
+        "dropout": 0.4,
+        "head_dropout": 0,
+        "fc_dropout": 0,
+        "batch_size": 128,
+        "learning_rate": 0.005,
+        "patience": 20,
+        "train_epochs": 100,
+        "features": "M",
+        "random_seed": 2024
+      },
+      "current_script": "scripts/CSformer/weather.sh",
+      "numerical_reproduction": "single_seed_completed"
+    },
+    {
+      "dataset": "Weather",
+      "pred_len": 336,
+      "paper": {
+        "seq_len": 336,
+        "scale": 4,
+        "patch_lengths": [
+          336,
+          168,
+          84,
+          42
+        ],
+        "tokens": 15,
+        "e_layers": 1,
+        "n_heads": 1,
+        "n_f_layers": 1
+      },
+      "archive_only": {
+        "enc_in": 21,
+        "d_model": 32,
+        "d_ff": 96,
+        "dropout": 0.4,
+        "head_dropout": 0,
+        "fc_dropout": 0,
+        "batch_size": 128,
+        "learning_rate": 0.005,
+        "patience": 20,
+        "train_epochs": 100,
+        "features": "M",
+        "random_seed": 2024
+      },
+      "current_script": "scripts/CSformer/weather.sh",
+      "numerical_reproduction": "single_seed_completed"
+    },
+    {
+      "dataset": "Weather",
+      "pred_len": 720,
+      "paper": {
+        "seq_len": 336,
+        "scale": 4,
+        "patch_lengths": [
+          336,
+          168,
+          84,
+          42
+        ],
+        "tokens": 15,
+        "e_layers": 1,
+        "n_heads": 1,
+        "n_f_layers": 1
+      },
+      "archive_only": {
+        "enc_in": 21,
+        "d_model": 32,
+        "d_ff": 96,
+        "dropout": 0.4,
+        "head_dropout": 0,
+        "fc_dropout": 0,
+        "batch_size": 128,
+        "learning_rate": 0.005,
+        "patience": 20,
+        "train_epochs": 100,
+        "features": "M",
+        "random_seed": 2024
+      },
+      "current_script": "scripts/CSformer/weather.sh",
+      "numerical_reproduction": "single_seed_completed"
+    },
+    {
+      "dataset": "Traffic",
+      "pred_len": 96,
+      "paper": {
+        "seq_len": 336,
+        "scale": 3,
+        "patch_lengths": [
+          336,
+          168,
+          84
+        ],
+        "tokens": 7,
+        "e_layers": 1,
+        "n_heads": 1,
+        "n_f_layers": 1
+      },
+      "archive_only": {
+        "enc_in": 862,
+        "d_model": 128,
+        "d_ff": 256,
+        "dropout": 0,
+        "head_dropout": 0,
+        "fc_dropout": 0,
+        "batch_size": 64,
+        "learning_rate": 0.01,
+        "patience": 10,
+        "train_epochs": 100,
+        "features": "M",
+        "random_seed": 2024
+      },
+      "current_script": "scripts/CSformer/traffic.sh",
+      "numerical_reproduction": "single_seed_completed"
+    },
+    {
+      "dataset": "Traffic",
+      "pred_len": 192,
+      "paper": {
+        "seq_len": 336,
+        "scale": 3,
+        "patch_lengths": [
+          336,
+          168,
+          84
+        ],
+        "tokens": 7,
+        "e_layers": 1,
+        "n_heads": 1,
+        "n_f_layers": 1
+      },
+      "archive_only": {
+        "enc_in": 862,
+        "d_model": 128,
+        "d_ff": 256,
+        "dropout": 0,
+        "head_dropout": 0,
+        "fc_dropout": 0,
+        "batch_size": 64,
+        "learning_rate": 0.01,
+        "patience": 10,
+        "train_epochs": 100,
+        "features": "M",
+        "random_seed": 2024
+      },
+      "current_script": "scripts/CSformer/traffic.sh",
+      "numerical_reproduction": "single_seed_completed"
+    },
+    {
+      "dataset": "Traffic",
+      "pred_len": 336,
+      "paper": {
+        "seq_len": 336,
+        "scale": 3,
+        "patch_lengths": [
+          336,
+          168,
+          84
+        ],
+        "tokens": 7,
+        "e_layers": 1,
+        "n_heads": 1,
+        "n_f_layers": 1
+      },
+      "archive_only": {
+        "enc_in": 862,
+        "d_model": 128,
+        "d_ff": 256,
+        "dropout": 0,
+        "head_dropout": 0,
+        "fc_dropout": 0,
+        "batch_size": 64,
+        "learning_rate": 0.01,
+        "patience": 10,
+        "train_epochs": 100,
+        "features": "M",
+        "random_seed": 2024
+      },
+      "current_script": "scripts/CSformer/traffic.sh",
+      "numerical_reproduction": "single_seed_completed"
+    },
+    {
+      "dataset": "Traffic",
+      "pred_len": 720,
+      "paper": {
+        "seq_len": 336,
+        "scale": 3,
+        "patch_lengths": [
+          336,
+          168,
+          84
+        ],
+        "tokens": 7,
+        "e_layers": 1,
+        "n_heads": 1,
+        "n_f_layers": 1
+      },
+      "archive_only": {
+        "enc_in": 862,
+        "d_model": 128,
+        "d_ff": 256,
+        "dropout": 0,
+        "head_dropout": 0,
+        "fc_dropout": 0,
+        "batch_size": 64,
+        "learning_rate": 0.01,
+        "patience": 10,
+        "train_epochs": 100,
+        "features": "M",
+        "random_seed": 2024
+      },
+      "current_script": "scripts/CSformer/traffic.sh",
+      "numerical_reproduction": "single_seed_completed"
+    },
+    {
+      "dataset": "Electricity",
+      "pred_len": 96,
+      "paper": {
+        "seq_len": 336,
+        "scale": 3,
+        "patch_lengths": [
+          336,
+          168,
+          84
+        ],
+        "tokens": 7,
+        "e_layers": 1,
+        "n_heads": 1,
+        "n_f_layers": 1
+      },
+      "archive_only": {
+        "enc_in": 321,
+        "d_model": 128,
+        "d_ff": 256,
+        "dropout": 0.4,
+        "head_dropout": 0,
+        "fc_dropout": 0,
+        "batch_size": 64,
+        "learning_rate": 0.005,
+        "patience": 10,
+        "train_epochs": 100,
+        "features": "M",
+        "random_seed": 2024
+      },
+      "current_script": "scripts/CSformer/electricity_336.sh",
+      "numerical_reproduction": "single_seed_completed"
+    },
+    {
+      "dataset": "Electricity",
+      "pred_len": 192,
+      "paper": {
+        "seq_len": 336,
+        "scale": 3,
+        "patch_lengths": [
+          336,
+          168,
+          84
+        ],
+        "tokens": 7,
+        "e_layers": 1,
+        "n_heads": 1,
+        "n_f_layers": 1
+      },
+      "archive_only": {
+        "enc_in": 321,
+        "d_model": 128,
+        "d_ff": 256,
+        "dropout": 0.4,
+        "head_dropout": 0,
+        "fc_dropout": 0,
+        "batch_size": 64,
+        "learning_rate": 0.005,
+        "patience": 10,
+        "train_epochs": 100,
+        "features": "M",
+        "random_seed": 2024
+      },
+      "current_script": "scripts/CSformer/electricity_336.sh",
+      "numerical_reproduction": "single_seed_completed"
+    },
+    {
+      "dataset": "Electricity",
+      "pred_len": 336,
+      "paper": {
+        "seq_len": 336,
+        "scale": 3,
+        "patch_lengths": [
+          336,
+          168,
+          84
+        ],
+        "tokens": 7,
+        "e_layers": 1,
+        "n_heads": 1,
+        "n_f_layers": 1
+      },
+      "archive_only": {
+        "enc_in": 321,
+        "d_model": 128,
+        "d_ff": 256,
+        "dropout": 0.4,
+        "head_dropout": 0,
+        "fc_dropout": 0,
+        "batch_size": 64,
+        "learning_rate": 0.005,
+        "patience": 10,
+        "train_epochs": 100,
+        "features": "M",
+        "random_seed": 2024
+      },
+      "current_script": "scripts/CSformer/electricity_336.sh",
+      "numerical_reproduction": "single_seed_completed"
+    },
+    {
+      "dataset": "Electricity",
+      "pred_len": 720,
+      "paper": {
+        "seq_len": 336,
+        "scale": 3,
+        "patch_lengths": [
+          336,
+          168,
+          84
+        ],
+        "tokens": 7,
+        "e_layers": 1,
+        "n_heads": 1,
+        "n_f_layers": 1
+      },
+      "archive_only": {
+        "enc_in": 321,
+        "d_model": 128,
+        "d_ff": 256,
+        "dropout": 0.4,
+        "head_dropout": 0,
+        "fc_dropout": 0,
+        "batch_size": 64,
+        "learning_rate": 0.005,
+        "patience": 10,
+        "train_epochs": 100,
+        "features": "M",
+        "random_seed": 2024
+      },
+      "current_script": "scripts/CSformer/electricity_336.sh",
+      "numerical_reproduction": "single_seed_completed"
+    },
+    {
+      "dataset": "ETTh1",
+      "pred_len": 96,
+      "paper": {
+        "seq_len": 336,
+        "scale": 3,
+        "patch_lengths": [
+          336,
+          168,
+          84
+        ],
+        "tokens": 7,
+        "e_layers": 1,
+        "n_heads": 1,
+        "n_f_layers": 1
+      },
+      "archive_only": {
+        "enc_in": 7,
+        "d_model": 32,
+        "d_ff": 128,
+        "dropout": 0.99,
+        "head_dropout": 0.15,
+        "fc_dropout": 0,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "patience": 20,
+        "train_epochs": 100,
+        "features": "M",
+        "random_seed": 2024
+      },
+      "current_script": "scripts/CSformer/etth1_336.sh",
+      "numerical_reproduction": "single_seed_completed"
+    },
+    {
+      "dataset": "ETTh1",
+      "pred_len": 192,
+      "paper": {
+        "seq_len": 336,
+        "scale": 3,
+        "patch_lengths": [
+          336,
+          168,
+          84
+        ],
+        "tokens": 7,
+        "e_layers": 1,
+        "n_heads": 1,
+        "n_f_layers": 1
+      },
+      "archive_only": {
+        "enc_in": 7,
+        "d_model": 32,
+        "d_ff": 128,
+        "dropout": 0.99,
+        "head_dropout": 0.15,
+        "fc_dropout": 0,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "patience": 20,
+        "train_epochs": 100,
+        "features": "M",
+        "random_seed": 2024
+      },
+      "current_script": "scripts/CSformer/etth1_336.sh",
+      "numerical_reproduction": "single_seed_completed"
+    },
+    {
+      "dataset": "ETTh1",
+      "pred_len": 336,
+      "paper": {
+        "seq_len": 336,
+        "scale": 3,
+        "patch_lengths": [
+          336,
+          168,
+          84
+        ],
+        "tokens": 7,
+        "e_layers": 1,
+        "n_heads": 1,
+        "n_f_layers": 1
+      },
+      "archive_only": {
+        "enc_in": 7,
+        "d_model": 32,
+        "d_ff": 128,
+        "dropout": 0.99,
+        "head_dropout": 0.15,
+        "fc_dropout": 0,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "patience": 20,
+        "train_epochs": 100,
+        "features": "M",
+        "random_seed": 2024
+      },
+      "current_script": "scripts/CSformer/etth1_336.sh",
+      "numerical_reproduction": "single_seed_completed"
+    },
+    {
+      "dataset": "ETTh1",
+      "pred_len": 720,
+      "paper": {
+        "seq_len": 336,
+        "scale": 3,
+        "patch_lengths": [
+          336,
+          168,
+          84
+        ],
+        "tokens": 7,
+        "e_layers": 1,
+        "n_heads": 1,
+        "n_f_layers": 1
+      },
+      "archive_only": {
+        "enc_in": 7,
+        "d_model": 32,
+        "d_ff": 128,
+        "dropout": 0.99,
+        "head_dropout": 0.15,
+        "fc_dropout": 0,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "patience": 20,
+        "train_epochs": 100,
+        "features": "M",
+        "random_seed": 2024
+      },
+      "current_script": "scripts/CSformer/etth1_336.sh",
+      "numerical_reproduction": "single_seed_completed"
+    },
+    {
+      "dataset": "ETTh2",
+      "pred_len": 96,
+      "paper": {
+        "seq_len": 336,
+        "scale": 3,
+        "patch_lengths": [
+          336,
+          168,
+          84
+        ],
+        "tokens": 7,
+        "e_layers": 1,
+        "n_heads": 1,
+        "n_f_layers": 1
+      },
+      "archive_only": {
+        "enc_in": 7,
+        "d_model": 32,
+        "d_ff": 128,
+        "dropout": 0.99,
+        "head_dropout": 0.2,
+        "fc_dropout": 0,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "patience": 20,
+        "train_epochs": 100,
+        "features": "M",
+        "random_seed": 2024
+      },
+      "current_script": "scripts/CSformer/etth2_336.sh",
+      "numerical_reproduction": "single_seed_completed"
+    },
+    {
+      "dataset": "ETTh2",
+      "pred_len": 192,
+      "paper": {
+        "seq_len": 336,
+        "scale": 3,
+        "patch_lengths": [
+          336,
+          168,
+          84
+        ],
+        "tokens": 7,
+        "e_layers": 1,
+        "n_heads": 1,
+        "n_f_layers": 1
+      },
+      "archive_only": {
+        "enc_in": 7,
+        "d_model": 32,
+        "d_ff": 128,
+        "dropout": 0.99,
+        "head_dropout": 0.2,
+        "fc_dropout": 0,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "patience": 20,
+        "train_epochs": 100,
+        "features": "M",
+        "random_seed": 2024
+      },
+      "current_script": "scripts/CSformer/etth2_336.sh",
+      "numerical_reproduction": "single_seed_completed"
+    },
+    {
+      "dataset": "ETTh2",
+      "pred_len": 336,
+      "paper": {
+        "seq_len": 336,
+        "scale": 3,
+        "patch_lengths": [
+          336,
+          168,
+          84
+        ],
+        "tokens": 7,
+        "e_layers": 1,
+        "n_heads": 1,
+        "n_f_layers": 1
+      },
+      "archive_only": {
+        "enc_in": 7,
+        "d_model": 32,
+        "d_ff": 128,
+        "dropout": 0.99,
+        "head_dropout": 0.2,
+        "fc_dropout": 0,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "patience": 20,
+        "train_epochs": 100,
+        "features": "M",
+        "random_seed": 2024
+      },
+      "current_script": "scripts/CSformer/etth2_336.sh",
+      "numerical_reproduction": "single_seed_completed"
+    },
+    {
+      "dataset": "ETTh2",
+      "pred_len": 720,
+      "paper": {
+        "seq_len": 336,
+        "scale": 3,
+        "patch_lengths": [
+          336,
+          168,
+          84
+        ],
+        "tokens": 7,
+        "e_layers": 1,
+        "n_heads": 1,
+        "n_f_layers": 1
+      },
+      "archive_only": {
+        "enc_in": 7,
+        "d_model": 32,
+        "d_ff": 128,
+        "dropout": 0.99,
+        "head_dropout": 0.2,
+        "fc_dropout": 0,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "patience": 20,
+        "train_epochs": 100,
+        "features": "M",
+        "random_seed": 2024
+      },
+      "current_script": "scripts/CSformer/etth2_336.sh",
+      "numerical_reproduction": "single_seed_completed"
+    },
+    {
+      "dataset": "ETTm1",
+      "pred_len": 96,
+      "paper": {
+        "seq_len": 336,
+        "scale": 2,
+        "patch_lengths": [
+          336,
+          168
+        ],
+        "tokens": 3,
+        "e_layers": 1,
+        "n_heads": 1,
+        "n_f_layers": 1
+      },
+      "archive_only": {
+        "enc_in": 7,
+        "d_model": 32,
+        "d_ff": 128,
+        "dropout": 0.4,
+        "head_dropout": 0,
+        "fc_dropout": 0,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "patience": 20,
+        "train_epochs": 100,
+        "features": "M",
+        "random_seed": 2024
+      },
+      "current_script": "scripts/CSformer/ettm1_336.sh",
+      "numerical_reproduction": "single_seed_completed"
+    },
+    {
+      "dataset": "ETTm1",
+      "pred_len": 192,
+      "paper": {
+        "seq_len": 336,
+        "scale": 2,
+        "patch_lengths": [
+          336,
+          168
+        ],
+        "tokens": 3,
+        "e_layers": 1,
+        "n_heads": 1,
+        "n_f_layers": 1
+      },
+      "archive_only": {
+        "enc_in": 7,
+        "d_model": 32,
+        "d_ff": 128,
+        "dropout": 0.4,
+        "head_dropout": 0,
+        "fc_dropout": 0,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "patience": 20,
+        "train_epochs": 100,
+        "features": "M",
+        "random_seed": 2024
+      },
+      "current_script": "scripts/CSformer/ettm1_336.sh",
+      "numerical_reproduction": "single_seed_completed"
+    },
+    {
+      "dataset": "ETTm1",
+      "pred_len": 336,
+      "paper": {
+        "seq_len": 336,
+        "scale": 2,
+        "patch_lengths": [
+          336,
+          168
+        ],
+        "tokens": 3,
+        "e_layers": 1,
+        "n_heads": 1,
+        "n_f_layers": 1
+      },
+      "archive_only": {
+        "enc_in": 7,
+        "d_model": 32,
+        "d_ff": 128,
+        "dropout": 0.4,
+        "head_dropout": 0,
+        "fc_dropout": 0,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "patience": 20,
+        "train_epochs": 100,
+        "features": "M",
+        "random_seed": 2024
+      },
+      "current_script": "scripts/CSformer/ettm1_336.sh",
+      "numerical_reproduction": "single_seed_completed"
+    },
+    {
+      "dataset": "ETTm1",
+      "pred_len": 720,
+      "paper": {
+        "seq_len": 336,
+        "scale": 2,
+        "patch_lengths": [
+          336,
+          168
+        ],
+        "tokens": 3,
+        "e_layers": 1,
+        "n_heads": 1,
+        "n_f_layers": 1
+      },
+      "archive_only": {
+        "enc_in": 7,
+        "d_model": 32,
+        "d_ff": 128,
+        "dropout": 0.4,
+        "head_dropout": 0,
+        "fc_dropout": 0,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "patience": 20,
+        "train_epochs": 100,
+        "features": "M",
+        "random_seed": 2024
+      },
+      "current_script": "scripts/CSformer/ettm1_336.sh",
+      "numerical_reproduction": "single_seed_completed"
+    },
+    {
+      "dataset": "ETTm2",
+      "pred_len": 96,
+      "paper": {
+        "seq_len": 336,
+        "scale": 2,
+        "patch_lengths": [
+          336,
+          168
+        ],
+        "tokens": 3,
+        "e_layers": 1,
+        "n_heads": 1,
+        "n_f_layers": 1
+      },
+      "archive_only": {
+        "enc_in": 7,
+        "d_model": 32,
+        "d_ff": 128,
+        "dropout": 0.9,
+        "head_dropout": 0,
+        "fc_dropout": 0,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "patience": 20,
+        "train_epochs": 100,
+        "features": "M",
+        "random_seed": 2024
+      },
+      "current_script": "scripts/CSformer/ettm2_336.sh",
+      "numerical_reproduction": "single_seed_completed"
+    },
+    {
+      "dataset": "ETTm2",
+      "pred_len": 192,
+      "paper": {
+        "seq_len": 336,
+        "scale": 2,
+        "patch_lengths": [
+          336,
+          168
+        ],
+        "tokens": 3,
+        "e_layers": 1,
+        "n_heads": 1,
+        "n_f_layers": 1
+      },
+      "archive_only": {
+        "enc_in": 7,
+        "d_model": 32,
+        "d_ff": 128,
+        "dropout": 0.9,
+        "head_dropout": 0,
+        "fc_dropout": 0,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "patience": 20,
+        "train_epochs": 100,
+        "features": "M",
+        "random_seed": 2024
+      },
+      "current_script": "scripts/CSformer/ettm2_336.sh",
+      "numerical_reproduction": "single_seed_completed"
+    },
+    {
+      "dataset": "ETTm2",
+      "pred_len": 336,
+      "paper": {
+        "seq_len": 336,
+        "scale": 2,
+        "patch_lengths": [
+          336,
+          168
+        ],
+        "tokens": 3,
+        "e_layers": 1,
+        "n_heads": 1,
+        "n_f_layers": 1
+      },
+      "archive_only": {
+        "enc_in": 7,
+        "d_model": 32,
+        "d_ff": 128,
+        "dropout": 0.9,
+        "head_dropout": 0,
+        "fc_dropout": 0,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "patience": 20,
+        "train_epochs": 100,
+        "features": "M",
+        "random_seed": 2024
+      },
+      "current_script": "scripts/CSformer/ettm2_336.sh",
+      "numerical_reproduction": "single_seed_completed"
+    },
+    {
+      "dataset": "ETTm2",
+      "pred_len": 720,
+      "paper": {
+        "seq_len": 336,
+        "scale": 2,
+        "patch_lengths": [
+          336,
+          168
+        ],
+        "tokens": 3,
+        "e_layers": 1,
+        "n_heads": 1,
+        "n_f_layers": 1
+      },
+      "archive_only": {
+        "enc_in": 7,
+        "d_model": 32,
+        "d_ff": 128,
+        "dropout": 0.9,
+        "head_dropout": 0,
+        "fc_dropout": 0,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "patience": 20,
+        "train_epochs": 100,
+        "features": "M",
+        "random_seed": 2024
+      },
+      "current_script": "scripts/CSformer/ettm2_336.sh",
+      "numerical_reproduction": "single_seed_completed"
+    }
+  ],
+  "reproduction": {
+    "status": "single_seed_completed",
+    "seed": 2024,
+    "configurations": 28,
+    "failures": 0,
+    "environment": "Python 3.10.12, PyTorch 2.6.0+cu124, NVIDIA A100",
+    "validation_protocol": "legacy",
+    "results_file": "metadata/reproduced-results.json",
+    "experiment_id": "single-seed-legacy-v1",
+    "implementation_source_sha256": "ee9609bf0e397096b84252b02e1351589f64027853265fd3a747e747cebb29f4"
+  }
+}

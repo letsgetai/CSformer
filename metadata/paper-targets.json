@@ -1,0 +1,174 @@
+{
+  "source": "Author accepted manuscript, Table I, p.3",
+  "doi": "10.1109/LSP.2024.3439103",
+  "results": [
+    {
+      "dataset": "Weather",
+      "horizon": 96,
+      "mse": 0.149,
+      "mae": 0.197
+    },
+    {
+      "dataset": "Weather",
+      "horizon": 192,
+      "mse": 0.196,
+      "mae": 0.244
+    },
+    {
+      "dataset": "Weather",
+      "horizon": 336,
+      "mse": 0.246,
+      "mae": 0.283
+    },
+    {
+      "dataset": "Weather",
+      "horizon": 720,
+      "mse": 0.323,
+      "mae": 0.335
+    },
+    {
+      "dataset": "Traffic",
+      "horizon": 96,
+      "mse": 0.362,
+      "mae": 0.254
+    },
+    {
+      "dataset": "Traffic",
+      "horizon": 192,
+      "mse": 0.384,
+      "mae": 0.263
+    },
+    {
+      "dataset": "Traffic",
+      "horizon": 336,
+      "mse": 0.396,
+      "mae": 0.267
+    },
+    {
+      "dataset": "Traffic",
+      "horizon": 720,
+      "mse": 0.43,
+      "mae": 0.287
+    },
+    {
+      "dataset": "Electricity",
+      "horizon": 96,
+      "mse": 0.13,
+      "mae": 0.222
+    },
+    {
+      "dataset": "Electricity",
+      "horizon": 192,
+      "mse": 0.148,
+      "mae": 0.24
+    },
+    {
+      "dataset": "Electricity",
+      "horizon": 336,
+      "mse": 0.165,
+      "mae": 0.257
+    },
+    {
+      "dataset": "Electricity",
+      "horizon": 720,
+      "mse": 0.203,
+      "mae": 0.29
+    },
+    {
+      "dataset": "ETTh1",
+      "horizon": 96,
+      "mse": 0.381,
+      "mae": 0.403
+    },
+    {
+      "dataset": "ETTh1",
+      "horizon": 192,
+      "mse": 0.413,
+      "mae": 0.421
+    },
+    {
+      "dataset": "ETTh1",
+      "horizon": 336,
+      "mse": 0.434,
+      "mae": 0.438
+    },
+    {
+      "dataset": "ETTh1",
+      "horizon": 720,
+      "mse": 0.448,
+      "mae": 0.47
+    },
+    {
+      "dataset": "ETTh2",
+      "horizon": 96,
+      "mse": 0.277,
+      "mae": 0.34
+    },
+    {
+      "dataset": "ETTh2",
+      "horizon": 192,
+      "mse": 0.337,
+      "mae": 0.379
+    },
+    {
+      "dataset": "ETTh2",
+      "horizon": 336,
+      "mse": 0.359,
+      "mae": 0.397
+    },
+    {
+      "dataset": "ETTh2",
+      "horizon": 720,
+      "mse": 0.392,
+      "mae": 0.426
+    },
+    {
+      "dataset": "ETTm1",
+      "horizon": 96,
+      "mse": 0.291,
+      "mae": 0.343
+    },
+    {
+      "dataset": "ETTm1",
+      "horizon": 192,
+      "mse": 0.329,
+      "mae": 0.366
+    },
+    {
+      "dataset": "ETTm1",
+      "horizon": 336,
+      "mse": 0.364,
+      "mae": 0.388
+    },
+    {
+      "dataset": "ETTm1",
+      "horizon": 720,
+      "mse": 0.419,
+      "mae": 0.421
+    },
+    {
+      "dataset": "ETTm2",
+      "horizon": 96,
+      "mse": 0.166,
+      "mae": 0.257
+    },
+    {
+      "dataset": "ETTm2",
+      "horizon": 192,
+      "mse": 0.223,
+      "mae": 0.295
+    },
+    {
+      "dataset": "ETTm2",
+      "horizon": 336,
+      "mse": 0.276,
+      "mae": 0.331
+    },
+    {
+      "dataset": "ETTm2",
+      "horizon": 720,
+      "mse": 0.37,
+      "mae": 0.387
+    }
+  ]
+}
