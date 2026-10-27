@@ -1,14 +1,14 @@
-# CSformer
+# CSformer — Cross-Scale Attention for Long-term Time Series Forecasting
 
-**Cross-Scale Attention for Long-term Time Series Forecasting**
+Official PyTorch implementation of **Cross-Scale Attention for Long-term Time Series Forecasting**
+(*IEEE Signal Processing Letters*, 2024; DOI: [10.1109/LSP.2024.3439103](https://doi.org/10.1109/LSP.2024.3439103)).
+CSformer is a channel-independent model for multivariate long-term time series forecasting (LTSF),
+combining multi-scale patching with cross-scale attention.
 
 Liangjian Wen, Quan Hu, Cong Guo, Ao Hu, Mingyi Zhang<br>
 *IEEE Signal Processing Letters*, 2024
 
 [Paper](https://doi.org/10.1109/LSP.2024.3439103) · [Reproduction records](docs/reproduction.md) · [Citation](#citation)
-
-Official PyTorch implementation of CSformer, a channel-independent model for long-term time
-series forecasting.
 
 ## Overview
 
@@ -25,7 +25,7 @@ across those scales, bringing local and global patterns into a compact attention
 
 ## Architecture
 
-![CSformer architecture: multi-scale patching, residual dense block, cross-scale attention, and forecasting head](assets/csformer-architecture.png)
+![CSformer architecture for long-term time series forecasting: multi-scale patching, residual dense block, cross-scale attention, and forecasting head](assets/csformer-architecture.png)
 
 *Figure 1 from the paper, with the patching label spelling corrected. The left panel shows the
 forecasting pipeline; the right panel shows multi-scale patch embedding.
